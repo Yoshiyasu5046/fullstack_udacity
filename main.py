@@ -48,7 +48,7 @@ class MainPage(webapp2.RequestHandler):
 	def get(self):
 		self.write_form()
 
-      
+	  
 	def valid_month(self, month):
 		months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 		abbvs_month = dict((m[:3].lower(), m) for m in months)
