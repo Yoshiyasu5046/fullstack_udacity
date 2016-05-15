@@ -49,21 +49,21 @@ class MainPage(webapp2.RequestHandler):
 		self.write_form()
 
       
-	def valid_month(self, month = "month"):
+	def valid_month(self, month):
 		months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 		abbvs_month = dict((m[:3].lower(), m) for m in months)
 		if month:
 			short_month = month[:3].lower()
 			return abbvs_month.get(short_month)
 
-	def valid_day(self, day = "day"):
+	def valid_day(self, day):
 		if day and day.isdigit():
 			int_day = int(day)
 			if 0 < int_day and int_day < 31:
 				return int_day
 			return None
 
-	def valid_year(self, year = "year"):
+	def valid_year(self, year):
 		if year and year.isdigit():
 			int_year = int(year)
 			if 1900 <= int_year and int_year <= 2020:
